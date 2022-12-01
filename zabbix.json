@@ -9,10 +9,15 @@
     "product_name": "Zabbix",
     "python_version": "3",
     "product_version_regex": ".*",
-    "publisher": "Zabbix LLC",
-    "license": "Copyright (c) Zabbix LLC, 2022",
-    "app_version": "0.0.41-fdse",
-    "utctime_updated": "2022-11-09T14:47:43.226660Z",
+    "publisher": "Splunk",
+    "contributors": [
+        {
+            "name": "Ricardo Moreira"
+        }
+    ],
+    "license": "Copyright (c) 2019-2022 Splunk Inc.",
+    "app_version": "0.0.42-fdse",
+    "utctime_updated": "2022-12-01T14:01:15.226660Z",
     "package_name": "phantom_zabbix",
     "main_module": "zabbix_connector.py",
     "min_phantom_version": "5.2.1.78411",
