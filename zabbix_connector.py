@@ -303,6 +303,7 @@ class ZabbixConnector(BaseConnector):
 
         # Return success, no need to set the message, only the status
         # BaseConnector will create a textual message based off of the summary dictionary
+        self.save_progress("Action completed successfuly")
         return action_result.set_status(phantom.APP_SUCCESS)
 
     def _handle_execute_script(self, param):
@@ -369,6 +370,7 @@ class ZabbixConnector(BaseConnector):
 
         # Return success, no need to set the message, only the status
         # BaseConnector will create a textual message based off of the summary dictionary
+        self.save_progress("Action completed successfuly")
         return action_result.set_status(phantom.APP_SUCCESS)
 
     def _get_script_id_from_name(self, action_result, auth_token, script_name):
