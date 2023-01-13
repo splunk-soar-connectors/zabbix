@@ -4,11 +4,7 @@
 # Phantom sample App Connector python file
 # -----------------------------------------
 
-# Python 3 Compatibility imports
-from __future__ import print_function, unicode_literals
-
 import json
-# Usage of the consts file is recommended
 import re
 
 # Phantom App imports
@@ -54,6 +50,9 @@ class ZabbixConnector(BaseConnector):
 
         try:
             soup = BeautifulSoup(response.text, "html.parser")
+            # Remove the script, style, footer and navigation part from the HTML message
+            for element in soup(["script", "style", "footer", "nav"]):
+                element.extract()
             error_text = soup.text
             split_lines = error_text.split("\n")
             split_lines = [x.strip() for x in split_lines if x.strip()]
@@ -230,7 +229,7 @@ class ZabbixConnector(BaseConnector):
         )
 
         if phantom.is_fail(ret_val):
-            self.save_progress("Test Connectivity Failed.")
+            self.save_progress("Test Connectivity Failed")
             return action_result.get_status()
 
         # Return success
@@ -284,8 +283,7 @@ class ZabbixConnector(BaseConnector):
             # the call to the 3rd party device or service failed, action result should contain all the error details
             # for now the return is commented out, but after implementation, return from here
             # return action_result.get_status()
-            return action_result.set_status(phantom.APP_ERROR, "Action Failed")
-            pass
+            return action_result.set_status(phantom.APP_ERROR, "Action failed while getting host information")
 
         result = response.get("result")
         items = result[0].get("items")
@@ -298,12 +296,12 @@ class ZabbixConnector(BaseConnector):
         action_result.add_data({"host_info": host_info})
 
         # Add a dictionary that is made up of the most important values from data into the summary
-        # summary = action_result.update_summary({})
-        # summary['num_data'] = len(action_result['data'])
+        summary = action_result.update_summary({})
+        summary['num_data'] = len(action_result['data'])
 
         # Return success, no need to set the message, only the status
         # BaseConnector will create a textual message based off of the summary dictionary
-        self.save_progress("Action completed successfuly")
+        self.save_progress("Successfuly fetched host information")
         return action_result.set_status(phantom.APP_SUCCESS)
 
     def _handle_execute_script(self, param):
@@ -360,8 +358,7 @@ class ZabbixConnector(BaseConnector):
             # the call to the 3rd party device or service failed, action result should contain all the error details
             # for now the return is commented out, but after implementation, return from here
             # return action_result.get_status()
-            return action_result.set_status(phantom.APP_ERROR, "Action Failed")
-            pass
+            return action_result.set_status(phantom.APP_ERROR, "Action failed while executing script")
 
         result = response.get("result")
 
@@ -434,8 +431,6 @@ class ZabbixConnector(BaseConnector):
         for k in substitutions:
             item = re.sub(k, substitutions[k], item).lower()
         return item
-
-        pass
 
     def handle_action(self, param):
         ret_val = phantom.APP_SUCCESS
