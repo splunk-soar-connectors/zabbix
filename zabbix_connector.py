@@ -1,6 +1,6 @@
 # File: zabbix_connector.py
 #
-# Copyright (c) 2019-2022 Splunk Inc.
+# Copyright (c) 2019-2023 Splunk Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -377,8 +377,7 @@ class ZabbixConnector(BaseConnector):
 
         # Return success, no need to set the message, only the status
         # BaseConnector will create a textual message based off of the summary dictionary
-        self.save_progress("Action completed successfuly")
-        return action_result.set_status(phantom.APP_SUCCESS)
+        return action_result.set_status(phantom.APP_SUCCESS, "Action completed successfully")
 
     def _get_script_id_from_name(self, action_result, auth_token, script_name):
         self.save_progress("Logging in")
@@ -487,6 +486,7 @@ class ZabbixConnector(BaseConnector):
 
 def main():
     import argparse
+    import sys
 
     argparser = argparse.ArgumentParser()
 
@@ -529,7 +529,7 @@ def main():
             session_id = r2.cookies["sessionid"]
         except Exception as e:
             print("Unable to get session id from the platform. Error: " + str(e))
-            exit(1)
+            sys.exit(1)
 
     with open(args.input_test_json) as f:
         in_json = f.read()
@@ -546,7 +546,7 @@ def main():
         ret_val = connector._handle_action(json.dumps(in_json), None)
         print(json.dumps(json.loads(ret_val), indent=4))
 
-    exit(0)
+    sys.exit(0)
 
 
 if __name__ == "__main__":
