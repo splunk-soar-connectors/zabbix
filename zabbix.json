@@ -15,7 +15,7 @@
             "name": "Ricardo Moreira"
         }
     ],
-    "license": "Copyright (c) 2019-2023 Splunk Inc.",
+    "license": "Copyright (c) 2019-2025 Splunk Inc.",
     "app_version": "1.0.1",
     "utctime_updated": "2022-12-01T14:01:15.226660Z",
     "package_name": "phantom_zabbix",
