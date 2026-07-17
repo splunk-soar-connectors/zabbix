@@ -1,9 +1,9 @@
 # Zabbix
 
-Publisher: Splunk Community \
-Connector Version: 1.0.2 \
-Product Vendor: Zabbix LLC \
-Product Name: Zabbix \
+Publisher: Splunk Community <br>
+Connector Version: 1.0.2 <br>
+Product Vendor: Zabbix LLC <br>
+Product Name: Zabbix <br>
 Minimum Product Version: 5.4.0
 
 Splunk SOAR connector for Zabbix
@@ -22,15 +22,15 @@ VARIABLE | REQUIRED | TYPE | DESCRIPTION
 
 ### Supported Actions
 
-[test connectivity](#action-test-connectivity) - Validate the asset configuration for connectivity using supplied configuration \
-[get host info](#action-get-host-info) - Get information about an endpoint \
+[test connectivity](#action-test-connectivity) - Validate the asset configuration for connectivity using supplied configuration <br>
+[get host info](#action-get-host-info) - Get information about an endpoint <br>
 [execute script](#action-execute-script) - Execute a script against an agent
 
 ## action: 'test connectivity'
 
 Validate the asset configuration for connectivity using supplied configuration
 
-Type: **test** \
+Type: **test** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -45,7 +45,7 @@ No Output
 
 Get information about an endpoint
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -70,7 +70,7 @@ summary.total_objects_successful | numeric | | |
 
 Execute a script against an agent
 
-Type: **investigate** \
+Type: **investigate** <br>
 Read only: **True**
 
 #### Action Parameters
@@ -97,7 +97,7 @@ ______________________________________________________________________
 
 Auto-generated Splunk SOAR Connector documentation.
 
-Copyright 2025 Splunk Inc.
+Copyright 2026 Splunk Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
