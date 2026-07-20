@@ -16,8 +16,8 @@
         }
     ],
     "license": "Copyright (c) 2019-2026 Splunk Inc.",
-    "app_version": "1.0.2",
-    "utctime_updated": "2025-04-28T18:46:28.755277Z",
+    "app_version": "2.0.0",
+    "utctime_updated": "2026-07-20T17:52:46.644391Z",
     "package_name": "phantom_zabbix",
     "main_module": "zabbix_connector.py",
     "min_phantom_version": "5.4.0",

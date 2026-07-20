@@ -1,7 +1,7 @@
 # Zabbix
 
 Publisher: Splunk Community <br>
-Connector Version: 1.0.2 <br>
+Connector Version: 2.0.0 <br>
 Product Vendor: Zabbix LLC <br>
 Product Name: Zabbix <br>
 Minimum Product Version: 5.4.0
