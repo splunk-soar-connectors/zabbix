@@ -15,7 +15,7 @@
             "name": "Ricardo Moreira"
         }
     ],
-    "license": "Copyright (c) 2019-2025 Splunk Inc.",
+    "license": "Copyright (c) 2019-2026 Splunk Inc.",
     "app_version": "1.0.2",
     "utctime_updated": "2025-04-28T18:46:28.755277Z",
     "package_name": "phantom_zabbix",
@@ -32,6 +32,7 @@
         "verify_server_cert": {
             "data_type": "boolean",
             "description": "Verify server certificate when using https",
+            "default": true,
             "order": 1
         },
         "username": {
@@ -194,5 +195,11 @@
             },
             "versions": "EQ(*)"
         }
-    ]
+    ],
+    "pip39_dependencies": {
+        "wheel": []
+    },
+    "pip313_dependencies": {
+        "wheel": []
+    }
 }
